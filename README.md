@@ -3,10 +3,10 @@ Simple app to calculate your daily quote whether you're in the safe side or abou
 
 ## ***-Steps-***
 
-  1- Open WE website (my.te.eg) and login with your credentials
-  2- Take (once only) your total quote and your expire date (When will the quote will be renewed again)
-  3- Store this data in the app (Data is saved in the registry automatically)
-  4- Whenever you want to calculate, login again and take the remaining data and paste it in the app. App will calculate everything for you.
+  1. Open WE website (my.te.eg) and login with your credentials
+  2. Take (once only) your total quote and your expire date (When will the quote will be renewed again)
+  3. Store this data in the app (Data is saved in the registry automatically)
+  4. Whenever you want to calculate, login again and take the remaining data and paste it in the app. App will calculate everything for you.
  
  
 ## **-Requirements-**
