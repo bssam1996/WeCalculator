@@ -1,0 +1,9 @@
+D:\Bssam's\My Works\WeCalculator\WeCalculator\bin\Debug\WeCalculator.exe
+D:\Bssam's\My Works\WeCalculator\WeCalculator\bin\Debug\WeCalculator.pdb
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.csprojAssemblyReference.cache
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.Properties.Resources.resources
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.csproj.GenerateResource.cache
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.csproj.CoreCompileInputs.cache
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.exe
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.pdb
+D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Debug\WeCalculator.MainForm.resources
