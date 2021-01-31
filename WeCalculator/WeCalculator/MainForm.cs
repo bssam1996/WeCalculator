@@ -61,18 +61,18 @@ namespace WeCalculator
             float supposedDailyQuote = (TotalQuote + AdditionalQuote) / ((assignedDate - (assignedDate.AddMonths(-1))).Days);
             supDailyQuoteLabel.Text = "Supposed quote daily = " + supposedDailyQuote.ToString("N2");
             supDailyQuoteLabel.ForeColor = Color.Gold;
-            UsedText.Text = ((TotalQuote + AdditionalQuote) - float.Parse(RemainingText.Text)).ToString("N2");
-            float actualDailyQuote = (float.Parse(RemainingText.Text) / remainingdays);
+            UsedText.Text = ((TotalQuote) - float.Parse(RemainingText.Text) + AdditionalQuote).ToString("N2");
+            float actualDailyQuote = ((float.Parse(RemainingText.Text) + AdditionalQuote) / remainingdays);
             ActualQuoteDailyLabel.Text = "Actual quote daily = " + actualDailyQuote.ToString("N2");
             if (actualDailyQuote > supposedDailyQuote)
             {
-                SavingLabel.Text = "You have extra = " + Math.Abs(supposedDailyQuote * remainingdays - float.Parse(RemainingText.Text)).ToString("N2");
+                SavingLabel.Text = "You have extra = " + Math.Abs(supposedDailyQuote * remainingdays - (float.Parse(RemainingText.Text) + AdditionalQuote)).ToString("N2");
                 ActualQuoteDailyLabel.ForeColor = Color.GreenYellow;
                 SavingLabel.ForeColor = Color.GreenYellow;
             }
             else
             {
-                SavingLabel.Text = "You need to save = " + (supposedDailyQuote * remainingdays - float.Parse(RemainingText.Text)).ToString("N2");
+                SavingLabel.Text = "You need to save = " + (supposedDailyQuote * remainingdays - (float.Parse(RemainingText.Text) + AdditionalQuote)).ToString("N2");
                 ActualQuoteDailyLabel.ForeColor = Color.OrangeRed;
                 SavingLabel.ForeColor = Color.OrangeRed;
             }
