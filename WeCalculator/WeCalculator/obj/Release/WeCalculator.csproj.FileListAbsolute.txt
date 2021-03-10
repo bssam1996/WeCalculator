@@ -6,4 +6,3 @@ D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Release\WeCalculator.csproj.Ge
 D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Release\WeCalculator.csproj.CoreCompileInputs.cache
 D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Release\WeCalculator.exe
 D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Release\WeCalculator.pdb
-D:\Bssam's\My Works\WeCalculator\WeCalculator\obj\Release\WeCalculator.csprojAssemblyReference.cache

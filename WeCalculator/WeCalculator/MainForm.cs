@@ -13,7 +13,8 @@ namespace WeCalculator
     {
         DateTime assignedDate;
         float TotalQuote;
-        int remainingdays;
+        float remainingdays;
+        float remaininghours;
         float AdditionalQuote;
         public MainForm()
         {
@@ -49,8 +50,9 @@ namespace WeCalculator
                 AdditionalQuote = float.Parse(Microsoft.Win32.Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\WeCalculator", "AdditionalQuote", "0").ToString());
                 TotalQuoteText.Text = TotalQuote.ToString();
                 AdditionalQuoteText.Text = AdditionalQuote.ToString();
-                remainingdays = ((assignedDate - DateTime.Now).Days + 1);
-                DaysLeftLabel.Text = "Days left = " + remainingdays.ToString();
+                remainingdays = ((assignedDate - DateTime.Now).Days);
+                remaininghours = ((DateTime.Parse("23:59:59") - DateTime.Now).Hours);
+                DaysLeftLabel.Text = "Days = " + remainingdays.ToString() + " and " + remaininghours.ToString() + " hours left";
             }
             catch(Exception ex) {
                 MessageBox.Show(ex.Message.ToString());
@@ -62,17 +64,17 @@ namespace WeCalculator
             supDailyQuoteLabel.Text = "Supposed quote daily = " + supposedDailyQuote.ToString("N2");
             supDailyQuoteLabel.ForeColor = Color.Gold;
             UsedText.Text = ((TotalQuote) - float.Parse(RemainingText.Text) + AdditionalQuote).ToString("N2");
-            float actualDailyQuote = ((float.Parse(RemainingText.Text) + AdditionalQuote) / remainingdays);
+            float actualDailyQuote = ((float.Parse(RemainingText.Text) + AdditionalQuote) / (remainingdays+(remaininghours/24)));
             ActualQuoteDailyLabel.Text = "Actual quote daily = " + actualDailyQuote.ToString("N2");
             if (actualDailyQuote > supposedDailyQuote)
             {
-                SavingLabel.Text = "You have extra = " + Math.Abs(supposedDailyQuote * remainingdays - (float.Parse(RemainingText.Text) + AdditionalQuote)).ToString("N2");
+                SavingLabel.Text = "You have extra = " + Math.Abs(supposedDailyQuote * (remainingdays + (remaininghours / 24)) - (float.Parse(RemainingText.Text) + AdditionalQuote)).ToString("N2");
                 ActualQuoteDailyLabel.ForeColor = Color.GreenYellow;
                 SavingLabel.ForeColor = Color.GreenYellow;
             }
             else
             {
-                SavingLabel.Text = "You need to save = " + (supposedDailyQuote * remainingdays - (float.Parse(RemainingText.Text) + AdditionalQuote)).ToString("N2");
+                SavingLabel.Text = "You need to save = " + (supposedDailyQuote * (remainingdays + (remaininghours / 24)) - (float.Parse(RemainingText.Text) + AdditionalQuote)).ToString("N2");
                 ActualQuoteDailyLabel.ForeColor = Color.OrangeRed;
                 SavingLabel.ForeColor = Color.OrangeRed;
             }
@@ -129,7 +131,8 @@ namespace WeCalculator
                 {
                     Microsoft.Win32.Registry.SetValue("HKEY_CURRENT_USER\\SOFTWARE\\WeCalculator", "EndDate", EndDate.Value.ToShortDateString());
                     assignedDate = EndDate.Value;
-                    remainingdays = ((assignedDate - DateTime.Now).Days + 1);
+                    remainingdays = ((assignedDate - DateTime.Now).Days);
+                    remaininghours = ((DateTime.Parse("23:59:59") - DateTime.Now).Hours);
                     calculate();
                 }
             }
